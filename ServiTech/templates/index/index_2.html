@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block titulo %}
+    General
+{% endblock titulo %}
+
+{% block content %}
+    <h1>INDEX DE CONTABILIDAD GENERAL</h1>
+
+    <a href="{% url 'cuenta' %}">Catalogo</a>
+    <a href="{% url 'transaccion' %}">Transaccion</a>
+    <a href="{% url 'reporte' %}">Generar reporte</a>
+{% endblock content %}

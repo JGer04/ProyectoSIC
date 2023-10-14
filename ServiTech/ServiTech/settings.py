@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'aplicaciones.libro',
     'aplicaciones.transaccion',
     'aplicaciones.index',
+    'aplicaciones.costo',
+    'aplicaciones.reporte',
     #Aplicaciones externas
     'bootstrap5',
     'fontawesomefree',
