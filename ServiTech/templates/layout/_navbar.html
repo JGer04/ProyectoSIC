@@ -1,0 +1,26 @@
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+{% load static %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark header">
+   <div class="toggle-btn">
+    <span>&#9776;</span>
+  </div> 
+  <a href="https://www.ues.edu.sv">
+    <img src="{% static 'img/ues-logo.png'%}" "width="70" height="60">
+  </a>
+
+  
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Referencias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Acerca De</a>
+      </li>
+      
+    </ul>
+  
+</nav>

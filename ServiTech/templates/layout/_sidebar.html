@@ -1,0 +1,30 @@
+{% load static %}
+<div id="sidebar">
+  <!-- <div class="toggle-btn">
+    <span>&#9776;</span>
+  </div> -->
+  <ul>
+    <li>
+      <img
+        src="{% static 'img/EISI.jpg'%}"
+        class="logo"
+        style="width: 150px; height: 150px"
+      />
+    </li>
+    <li class="nav-item active">
+      <a href="{% url 'inicio' %}" class="link-secondary">Inicio</a>
+        
+    </li>
+    <li class="nav-item active">
+      <a  class="link-secondary">Libros</a>       
+    </li>
+
+    <li class="nav-item active">
+      <a  class="link-secondary">Cuentas</a>
+    </li> 
+
+      <li class="nav-item active">
+        <a  class="link-secondary">Costos</a>       
+      </li>
+  </ul>
+</div>
