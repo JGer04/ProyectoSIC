@@ -6,5 +6,13 @@
 {% endblock titulo %}
 
 {% block content %}
-<h1>Costos</h1>
+<div class="grupo">
+    <h1>Contabilidad de Costos</h1>
+    <div class="tarjetas">
+        <a href="{% url 'cuenta' %}">Servicios</a>
+        <a href="{% url 'transaccion' %}">Definir actividades</a>
+        <a href="{% url 'reporte' %}">Costeo ABC</a>
+        <a href="{% url 'inicio' %}">Volver a inicio</a>
+    </div>
+</div>
 {% endblock content %}

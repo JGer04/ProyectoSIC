@@ -6,5 +6,33 @@
 {% endblock titulo %}
 
 {% block content %}
-<h1>REPORTES</h1>
+    <div class="principal">
+        <h1 class="ef">ESTADOS FINANCIEROS</h1>
+        <div class="reportes">
+            <!--individual-->
+            <div class="boton-ef estado-resultados">
+                <img src="{% static 'img/estado-resultados.png'%}"  alt="">
+                <div class="parrafos">
+                    <p class="tipo">Estado de Resultados</p>
+                    <p class="descripcion"> Informe sobre ganancias y pérdidas que muestra los ingresos y gastos de la empresa.</p>
+                </div>
+            </div>
+            <!--individual-->
+            <div class="boton-ef estado-resultados">
+                <img src="{% static 'img/estado-capital.png'%}"  alt="">
+                <div class="parrafos">
+                    <p class="tipo">Estado de Capital</p>
+                    <p class="descripcion">Resumen de los cambios en el patrimonio neto de la empresa, detallando contribuciones de los propietarios y ganancias retenidas o distribuidas.</p>
+                </div>
+            </div>
+            <!--individual-->
+            <div class="boton-ef estado-resultados">
+                <img src="{% static 'img/balance-general.png'%}"  alt="">
+                <div class="parrafos">
+                    <p class="tipo">Balance General</p>
+                    <p class="descripcion">Informe de situación financiera que presenta activos, pasivos y patrimonio neto de la empresa.</p>
+                </div>
+            </div>
+        </div>   
+    </div>
 {% endblock content %}
