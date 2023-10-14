@@ -6,9 +6,13 @@
 {% endblock titulo %}
 
 {% block content %}
-    <h1>INDEX DE CONTABILIDAD GENERAL</h1>
-
-    <a href="{% url 'cuenta' %}">Catalogo</a>
-    <a href="{% url 'transaccion' %}">Transaccion</a>
-    <a href="{% url 'reporte' %}">Generar reporte</a>
+<div class="grupo">
+    <h1>Contabilidad General</h1>
+    <div class="tarjetas">
+        <a href="{% url 'cuenta' %}">Catálogo de cuentas</a>
+        <a href="{% url 'transaccion' %}">Transacciones</a>
+        <a href="{% url 'reporte' %}">Generar reportes</a>
+        <a href="{% url 'inicio' %}">Volver a inicio</a>
+    </div>
+</div>
 {% endblock content %}
