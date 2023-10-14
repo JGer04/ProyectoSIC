@@ -6,5 +6,25 @@
 {% endblock titulo %}
 
 {% block content %}
-<h1>TRANSACCIONES</h1>
+<div class="principal">
+    <h1>TRANSACCIONES</h1>
+    <div class="botones">
+        <button id="diario">Mostrar libro diario</button>
+        <button id="mayor">Mostrar libro mayor</button>
+        <button id="ocultarTodo">Ocultar Todo</button>
+    </div>
+    <div id="Tdiario" class="hidden tabla">
+        <!-- tabla para libro diario -->
+        <table>
+        <!-- Contenido de la tabla -->
+            <th>Hola</th>
+        </table>
+    </div>
+    <div id="Tmayor" class="hidden tabla">
+        <!-- tabla para libro mayor -->
+        <table>
+        <!-- Contenido de la tabla -->
+        <th>Hola</th>
+        </table>
+</div>
 {% endblock content %}
