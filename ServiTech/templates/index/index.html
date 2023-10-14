@@ -8,6 +8,24 @@
 
 
 {% block content %}
-    <h1>HOLA</h1>
+    <div class="prueba">
+        <h1>Sistema de contabilidad - ServiTech</h1>
+        <div class="opciones">
+            <div class="individual">
+                <a href="general.html">
+                    <img class="img-inicio" src="{% static 'img/conta-general.jpg'%}" 
+                    alt="general">
+                </a>
+                <p class="texto">Contabilidad General</p>
+            </div>
+            <div class="individual">
+                <a href="">
+                    <img class="img-inicio" src="{% static 'img/conta-costos.jpg'%}" 
+                    alt="general">
+                </a>
+                <p class="texto">Contabilidad de Costos</p>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
     

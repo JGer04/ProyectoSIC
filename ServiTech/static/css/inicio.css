@@ -1,0 +1,50 @@
+.prueba{
+ margin-top: 6rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+h1{
+ text-align: center;
+}
+
+.opciones{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ column-gap: 2rem;
+ margin: 2rem;
+}
+
+.individual{
+ width: 350px;
+ height: 350px;
+ margin-bottom: 1.5rem;
+}
+
+.img-inicio{
+ width: 350px;
+ height: 350px;
+ border-radius: 10px;
+}
+
+.texto{
+ text-align: center;
+ font-size: 1.5rem;
+ font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+ .opciones{
+  flex-direction: column;
+  margin-top: 2rem;
+  row-gap: 2rem;
+ }
+
+ .indivual .img-inicio{
+ width: 250px;
+ height: 250px;
+}
+}
