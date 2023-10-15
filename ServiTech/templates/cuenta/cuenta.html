@@ -7,13 +7,18 @@
 
 {% block content %}
     <h1>CATALOGO DE CUENTAS</h1><br>
+    <a href="{% url 'crear' %}">
+        <button style="margin-bottom: 50px;" type="button" class="btn btn-primary">Crear nueva cuenta</button>
+    </a>
+     
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
-                <th>nombre</th>
-                
+                <th>nombre</th>              
                 <th>Monto ($)</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
                            
             </tr>
         </thead>
@@ -22,8 +27,13 @@
                 <tr>
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
-                    
                     <td> {{ e.monto }}</td>
+                    <td> <a href="{% url 'modificar' e.id %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a></td>
+                    <td><a href="{% url 'eliminar' e.id %}">
+                        <i class="fa-regular fa-trash"></i></td>
+                    </a></td>
                 </tr>
                     {% endfor %}
         </tbody>
