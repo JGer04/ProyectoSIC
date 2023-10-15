@@ -15,9 +15,30 @@
     </div>
     <div id="Tdiario" class="hidden tabla">
         <!-- tabla para libro diario -->
-        <table>
-        <!-- Contenido de la tabla -->
-            <th>Hola</th>
+        <table class="table table-striped" style="font-size: x-large;">
+            <thead class="table-dark">
+                <tr>
+                    <th>Código</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Cuenta Debe</th>
+                    <th>Cuenta Haber</th>
+                    <th>Monto</th>
+                               
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for e in transaccionTabla %}
+                    <tr>
+                        <td> {{ e.codigo }}</td>
+                        <td> {{ e.fecha }}</td>
+                        <td> {{ e.descripcion }}</td>
+                        <td> {{ e.cuenta_Debe }}</td>
+                        <td> {{ e.cuenta_Haber }}</td>
+                        <td> {{ e.monto }}</td>
+                    </tr>
+                        {% endfor %}
+            </tbody>
         </table>
     </div>
     <div id="Tmayor" class="hidden tabla">

@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block titulo %}
+    Transacción
+{% endblock titulo %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <h1>Ingresar Transacción</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        
+        <input type="submit" value="Guardar" class="btn btn-primary">
+    </form>
+{% endblock content %}
