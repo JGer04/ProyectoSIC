@@ -6,7 +6,11 @@ class TransaccionForm(forms.ModelForm):
     calcular_iva = forms.BooleanField(label='iva', required=False)
     class Meta:
         model = transaccion
-        fields = ['codigo','fecha','descripcion','cuenta_Debe','cuenta_Haber','monto']
+        fields = ['tipo','codigo','fecha','descripcion','cuenta_Debe','cuenta_Haber','monto']
+
+    tipo = forms.ChoiceField(
+        widget=forms.RadioSelect, choices= transaccion.CLASIFICACIONES
+    )
 
     def __init__(self, *args, **kwargs):
         super(TransaccionForm, self).__init__(*args, **kwargs)

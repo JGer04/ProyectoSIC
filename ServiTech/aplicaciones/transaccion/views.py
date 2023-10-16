@@ -11,25 +11,54 @@ def ingresar_transaccion(request):
     cuentas = cuenta.objects.all()
     if request.method == 'POST':
         form = TransaccionForm(request.POST)
+
         if form.is_valid():
             transacción = form.save(commit=False)
-            if 'calcular_iva' in request.POST:
-
-                monto_float = float(transacción.monto)
-                iva = 0.13 * monto_float
-                transacción.monto += Decimal(iva)
-
-            transacción.save()
-
             debe = transacción.cuenta_Debe
             haber = transacción.cuenta_Haber
             monto = transacción.monto
 
-            debe.monto = debe.monto - monto
-            debe.save()
+            if 'calcular_iva' in request.POST:
+                monto_float = float(transacción.monto)
+                iva = 0.13 * monto_float
+                
+                if transacción.tipo == 'Servicio':
+                    transacción.cuenta_Haber.monto +=Decimal(iva)
+                    monto_suma = Decimal(iva)
+                    destino = cuenta.objects.get(codigo = 113)
+                    destino.monto += monto_suma
+                    destino.save()
 
-            haber.monto = haber.monto - monto
-            haber.save()
+                    debe.monto = debe.monto + monto
+                    debe.save()
+
+                    haber.monto = haber.monto + monto
+                    haber.save()
+
+
+
+                elif transacción.tipo == 'Compra':
+                    transacción.cuenta_Debe.monto -=Decimal(iva)
+                    monto_suma = Decimal(iva)
+                    destino = cuenta.objects.get(codigo = 114)
+                    destino.monto += monto_suma
+                    destino.save()
+
+                    debe.monto = debe.monto - monto
+                    debe.save()
+
+                    haber.monto = haber.monto + monto
+                    haber.save()
+
+            transacción.save()
+
+            
+
+            #debe.monto = debe.monto - monto
+            #debe.save()
+
+            #haber.monto = haber.monto + monto
+            #haber.save()
 
             return redirect('transaccion')
     else:

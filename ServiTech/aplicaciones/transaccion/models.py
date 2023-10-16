@@ -2,6 +2,11 @@ from django.db import models
 from django.utils import formats
 # Create your models here.
 class transaccion(models.Model):
+    CLASIFICACIONES = (
+        ('Servicio', 'Servicio'),
+        ('Compra', 'Compra'),
+    )
+    tipo = models.CharField(max_length=50, choices=CLASIFICACIONES, default='') 
     codigo = models.CharField(max_length=10)
     fecha = models.DateField()
     descripcion = models.CharField(max_length=100)
