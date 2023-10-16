@@ -14,6 +14,12 @@
         <button id="ocultarTodo">Ocultar Todo</button>
     </div>
     <div id="Tdiario" class="hidden tabla">
+        <div class="Tdiario">
+            <h2>Libro diario</h2>
+                <a class="btn" href="{% url 'ingresar_transaccion' %}">
+                Crear nueva transacción
+                </a>
+        </div>
         <!-- tabla para libro diario -->
         <table class="table table-striped" style="font-size: x-large;">
             <thead class="table-dark">
@@ -42,6 +48,8 @@
         </table>
     </div>
     <div id="Tmayor" class="hidden tabla">
+        <div class="Tdiario">
+            <h2>Libro mayor</h2>
         <!-- tabla para libro mayor -->
         <table>
         <!-- Contenido de la tabla -->

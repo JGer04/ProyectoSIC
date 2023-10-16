@@ -19,7 +19,7 @@
                 </div>
             </div>
             <!--individual-->
-            <div class="boton-ef estado-resultados">
+            <div class="boton-ef estado-capital">
                 <img src="{% static 'img/estado-capital.png'%}"  alt="">
                 <div class="parrafos">
                     <p class="tipo">Estado de Capital</p>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <!--individual-->
-            <div class="boton-ef estado-resultados">
+            <div class="boton-ef balance-general">
                 <img src="{% static 'img/balance-general.png'%}"  alt="">
                 <div class="parrafos">
                     <p class="tipo">Balance General</p>
@@ -36,4 +36,20 @@
             </div>
         </div>   
     </div>
+    <div class="mostrar-reportes">
+        <div class="resultados">
+            <p class="encabezado">info</p>
+            <table>contenido estado de resultados</table>
+        </div>
+        <div class="capital">
+            <p class="encabezado">info</p>
+            <table>contenido estado de capital</table>
+        </div>
+        <div class="general">
+            <p class="encabezado">info</p>
+            <table>contenido balance general</table>
+        </div>
+        <button class="btn cerrar-ef">Ocultar estados financieros</button>
+    </div>
+
 {% endblock content %}

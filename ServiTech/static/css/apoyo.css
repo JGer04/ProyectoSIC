@@ -1,0 +1,44 @@
+/* Para transaciones*/
+.Tdiario h2{
+ text-align: center;
+ font-size: 2.2rem;
+ font-weight: 700;
+}
+
+.Tdiario .btn, .mostrar-reportes .btn {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.Tdiario .btn:hover {
+  background-color: #0056b3;
+}
+
+/*REPORTES*/
+.boton-ef{
+  cursor: pointer;
+}
+
+.mostrar-reportes{
+  margin-top: 2rem;
+}
+
+.mostrar-reportes> div{
+  display: none;
+}
+
+.resultados.mostrar, .capital.mostrar, .general.mostrar{
+  display: contents;
+}
+
+@media screen and (min-width: 850px) {
+  .mostrar-reportes{
+  margin-top: -10rem;
+  }
+}
