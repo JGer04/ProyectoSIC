@@ -3,7 +3,6 @@ from.models import cuenta
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
-from .forms import *
 from django.db.models import Sum
 
 # Create your views here.

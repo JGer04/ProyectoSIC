@@ -10,7 +10,7 @@
     <h1>TRANSACCIONES</h1>
     <div class="botones">
         <button id="diario">Mostrar libro diario</button>
-        <button id="mayor">Mostrar libro mayor</button>
+        <a class= "btn" href = "{% url 'libro' %}"> Mostrar libro mayor</a>
         <button id="ocultarTodo">Ocultar Todo</button>
     </div>
     <div id="Tdiario" class="hidden tabla">
@@ -47,11 +47,5 @@
             </tbody>
         </table>
     </div>
-    <br><div id="Tmayor" class="hidden tabla">
-        <div class="Tdiario">
-            <a class= "btn" href = "{% url 'libro' %}">Libro mayor</a>
-            
-            
-        <!-- tabla para libro mayor -->    
 </div>
 {% endblock content %}

@@ -1,0 +1,391 @@
+/*PARA INICIO*/
+.prueba{
+ margin-top: 6rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+h1{
+ text-align: center;
+}
+
+.opciones{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ column-gap: 2rem;
+ margin: 2rem;
+}
+
+.individual{
+ width: 350px;
+ height: 350px;
+ margin-bottom: 1.5rem;
+}
+
+.img-inicio{
+ width: 350px;
+ height: 350px;
+ border-radius: 10px;
+}
+
+.texto{
+ text-align: center;
+ font-size: 1.5rem;
+ font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+ .opciones{
+  flex-direction: column;
+  margin-top: 2rem;
+  row-gap: 2rem;
+ }
+
+ .indivual .img-inicio{
+ width: 250px;
+ height: 250px;
+}
+}
+
+/*PARA INICIO2*/
+
+.grupo h1{
+ margin: 6rem 0 5rem 0;
+ letter-spacing: 0.2rem;
+ text-align: center;
+ font-size: 3rem;
+}
+
+.grupo{
+ margin-bottom: 16rem;
+}
+  /*TARJETAS*/
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  background-color: #e6ffe6; 
+  padding: 20px;
+  justify-items: center;
+  text-align: center;
+  grid-auto-flow: dense;
+}
+
+.tarjetas a {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .tarjetas {
+    grid-template-columns: auto;
+  }
+  .grupo{
+  margin-bottom: 0;
+ }
+ .grupo h1{
+  margin: 1.5rem;
+ } 
+
+}
+
+@media screen and (max-width: 992px) {
+  .grupo{
+  margin-bottom: 5rem;
+ } 
+}
+
+/*PARA APOYO*/
+/* De transaciones*/
+.Tdiario h2{
+ text-align: center;
+ font-size: 2.2rem;
+ font-weight: 700;
+}
+
+.btn, .mostrar-reportes .btn {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+
+
+/*De REPORTES*/
+.boton-ef{
+  cursor: pointer;
+}
+
+.mostrar-reportes{
+  margin-top: 2rem;
+}
+
+.mostrar-reportes> div{
+  display: none;
+}
+
+.resultados.mostrar, .capital.mostrar, .general.mostrar{
+  display: contents;
+}
+
+@media screen and (min-width: 850px) {
+  .mostrar-reportes{
+  margin-top: -10rem;
+  }
+}
+
+/*PARA REPORTES*/
+.principal .ef{
+ padding: 2rem;
+ width: 100%;
+ height: 100px;
+ background-color: #e6ffe6; 
+}
+
+.reportes{
+ width: 100%;
+ height: 80%;
+ display: flex;
+ flex-direction: column;
+ row-gap: 1rem;
+}
+
+.boton-ef{
+ display: flex;
+ flex-direction: row;
+ column-gap: 2rem;
+ border: 1px solid black;
+ border-radius: 10px;
+}
+
+.boton-ef img{
+ width: 200px;
+  height: 200px; 
+  object-fit: cover;
+}
+
+.parrafos{
+ padding: 1rem;
+ font-weight: bold;
+}
+
+.parrafos .descripcion{
+ text-align: justify;
+ font-weight: 500;
+}
+
+@media screen and (min-width: 650px) {
+  .boton-ef img{
+  width: 150px;
+  height: 150px; 
+ }
+}
+
+@media screen and (min-width: 850px) {
+  .boton-ef img{
+  width: 50px;
+  height: 50px; 
+ }
+ .reportes{
+  flex-direction: row;
+  column-gap: 0.5rem;
+ }
+ .boton-ef{
+ flex-direction: column;
+ height: 60%;
+ width: calc(100%/3);
+ padding: 1.5rem;
+}
+.tipo{
+ text-align: center;
+}
+.parrafos{
+ padding: 0;
+}
+.parrafos p{
+ font-size: 1.2rem;
+}
+}
+
+/*PARA SIDEBAR*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+=============== 
+Tags generales y IDs
+===============
+*/
+img {
+  z-index: -1;
+}
+
+#main {
+  margin-top: 10vh;
+}
+
+/*
+=============== 
+Clases
+===============
+*/
+.grafico{
+  width: 100%;
+  height: 100%;
+  margin: 1.5rem 15px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grafico img{
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 450px;
+  border: 1px solid black;
+}
+
+.graf-desc{
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.content-active {
+  padding-left: 220px;
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  z-index: 1;
+}
+
+/*
+=============== 
+Sidebar
+===============
+*/
+
+#sidebar {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 220px;
+  height: 90vh;
+  background-color: rgb(0, 0, 0);
+  transition: all 500ms linear;
+  transform: translateX(-100%);
+  align-items: center;
+  justify-content: center;
+}
+#sidebar.active {
+  transform: translateX(0);
+}
+#sidebar ul li {
+  color: rgba(230, 230, 230, 0.9);
+  text-align: center;
+  padding: 15px 10px;
+  list-style-type: none;
+  border-bottom: 1px solid rgba(223, 218, 218, 0.945);
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 1.1rem;
+  right: 3rem;
+  cursor: pointer;
+}
+.toggle-btn span {
+  display: block;
+  width: 40px;
+  text-align: center;
+  font-size: 25px;
+  border: 1px solid #fc3c2b;
+  color: #000;
+  background-color: #fc3c2b;
+}
+
+.logo {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+/*PARA TRANSACCIONES*/
+.principal{
+ margin-top: 6rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ max-width: 1500px;
+ height: 80vh;
+}
+
+.botones{
+ display: flex;
+ flex-direction: row;
+}
+
+.botones button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.botones button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+ .tabla{
+  margin-top: 4rem;
+  width: 90%;
+  height: auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 2s linear;
+ }
+
+ .tabla.active {
+  display: block;
+  opacity: 1;
+}
+
