@@ -15,8 +15,8 @@
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
-                <th>nombre</th>              
-                <th>Monto ($)</th>
+                <th>Nombre</th>              
+                <!-- <th>Monto ($)</th> --> 
                 <th>Modificar</th>
                 <th>Eliminar</th>
                            
@@ -27,7 +27,7 @@
                 <tr>
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
-                    <td> {{ e.monto }}</td>
+                    <!-- <td> {{ e.monto }}</td> -->
                     <td> <a href="{% url 'modificar' e.id %}">
                         <i class="fa-regular fa-pen-to-square"></i>
                     </a></td>

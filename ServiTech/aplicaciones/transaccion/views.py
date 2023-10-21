@@ -70,3 +70,4 @@ def TablaTransaccion(request):
     return render(request, 'transaccion/transaccion.html',{
         'transaccionTabla':transaccionTabla
     })
+

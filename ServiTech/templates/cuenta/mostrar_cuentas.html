@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% block titulo %}
+    Libro Mayor
+{% endblock titulo %}
+
+{% block content %}
+<br><h1>Libro mayor - ServiTech</h1><br>
+<table class="table table-striped" style="font-size: x-large;">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre de la Cuenta</th>
+            <th>DEBE</th>
+            <th>HABER</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for i in cuentas_debe %}
+            <tr>
+                <td>{{ i.nombre }}</td>
+                <td>$ {{ i.monto }}</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        {% for j in cuentas_haber %}
+            <tr>
+                <td>{{ j.nombre }}</td>  
+                <td></td>
+                <td>$ {{ j.monto }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class ="table-dark">
+        <tr>
+            <td><b>Total:</b></td>
+            <td>$ {{ suma_monto_debe }}</td>
+            <td>$ {{ suma_monto_haber }}</td>
+        </tr>
+    </tfoot>
+</table>
+  </table>
+    
+{% endblock content %}
+
+
