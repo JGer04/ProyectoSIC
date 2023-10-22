@@ -7,7 +7,7 @@ from django.db.models import Sum
 
 # Create your views here.
 def cuentas(request):
-    catalogo = cuenta.objects.all().order_by('id')
+    catalogo = cuenta.objects.all().order_by('codigo')
 
     return render(request, 'cuenta/cuenta.html',{
         'catalogo':catalogo
@@ -33,20 +33,20 @@ def cuentas_view(request):
 class crear(CreateView):
     template_name = 'cuenta/crud/crear.html'
     model = cuenta
-    fields = ['codigo','nombre','monto']
+    fields = ['codigo','nombre','monto','categoria']
     success_url = reverse_lazy('cuenta')
 
 class modificar(UpdateView):
     template_name = 'cuenta/crud/modificar.html'
     model = cuenta
-    fields = ['codigo','nombre','monto']
+    fields = ['codigo','nombre','monto','categoria']
     success_message = "El registro %(nombre)s fue mofificado exitosamente"
     success_url = reverse_lazy('cuenta')
 
 class eliminar(DeleteView):
     template_name = 'cuenta/crud/eliminar.html'
     model = cuenta
-    fields = ['codigo','nombre','monto']
+    fields = ['codigo','nombre','monto', 'categoria']
     success_message = "El registro %(nombre)s fue eliminado exitosamente"
     success_url = reverse_lazy('cuenta')
 

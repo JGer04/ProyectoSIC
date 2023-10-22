@@ -25,7 +25,7 @@ def ingresar_transaccion(request):
                 if transacción.tipo == 'Servicio':
                     transacción.cuenta_Haber.monto +=Decimal(iva)
                     monto_suma = Decimal(iva)
-                    destino = cuenta.objects.get(codigo = 113)
+                    destino = cuenta.objects.get(codigo = 2103)
                     destino.monto += monto_suma
                     destino.save()
 
@@ -40,7 +40,7 @@ def ingresar_transaccion(request):
                 elif transacción.tipo == 'Compra':
                     transacción.cuenta_Debe.monto -=Decimal(iva)
                     monto_suma = Decimal(iva)
-                    destino = cuenta.objects.get(codigo = 114)
+                    destino = cuenta.objects.get(codigo = 1105)
                     destino.monto += monto_suma
                     destino.save()
 
