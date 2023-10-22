@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 
 {% block titulo %}
-    Balance General
+    Libro Mayor
 {% endblock titulo %}
 
 {% block content %}
@@ -15,24 +15,32 @@
         </tr>
     </thead>
     <tbody class="table-group-divider">
-        {% for i in cuentas_debe %}
+
+        {% for i in subcuenta %}
+        {% if i.categoria == 'Debe' %}
             <tr>
-                <td>{{ i.nombre }}</td>
+                <td>{{ i.nombre }}</td>     
                 <td>$ {{ i.monto }}</td>
                 <td></td>
             </tr>
+        {% endif %}    
         {% endfor %}
-        {% for j in cuentas_haber %}
+
+        {% for j in subcuenta %}
+        {% if j.categoria == 'Haber' %}
             <tr>
-                <td>{{ j.nombre }}</td>  
-                <td></td>
+                <td>{{ j.nombre }}</td>
+                <td></td>     
                 <td>$ {{ j.monto }}</td>
+                
             </tr>
+        {% endif %}    
         {% endfor %}
     </tbody>
     <tfoot class ="table-dark">
         <tr>
             <td><b>Total:</b></td>
+            
             <td>$ {{ suma_monto_debe }}</td>
             <td>$ {{ suma_monto_haber }}</td>
         </tr>
@@ -41,3 +49,4 @@
   </table>
     <a class= "btn" href = "{% url 'reporte' %}"> Volver</a>
 {% endblock content %}
+

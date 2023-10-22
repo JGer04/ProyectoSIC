@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Estado de Capital
+{% endblock titulo %}
+
+{% block content %}
+<br><h1>Estado de Capital</h1><br>
+<table class="table table-striped" style="font-size: x-large;">
+  <thead class="table-dark">
+      <tr>
+          <th>Nombre de la Cuenta</th>
+          <th>MONTO</th>
+      </tr>
+  </thead>
+  <tbody class="table-group-divider">
+          <tr>
+              <td>{{ capital.nombre }}</td>
+              <td>{{ capital.monto }}</td>         
+          </tr>
+          <tr>
+              <td>{{ utilidad.nombre }}</td>     
+              <td>{{ utilidad.monto }}</td>
+          </tr>
+  </tbody>
+  <tfoot class ="table-dark">
+      <tr>
+          <td><b>Total:</b></td>
+          <td>$ {{ total }}</td> 
+      </tr>
+  </tfoot>
+</table>
+{% endblock content %}
