@@ -1,0 +1,65 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Estado De Resultados
+{% endblock titulo %}
+
+{% block content %}
+    <br><h1>Estado De Resultados</h1><br>
+
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>ESTADO DE RESULTADOS</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+            <tr>
+                <th>CUENTAS DE INGRESOS</th>                
+                <th>MONTO</th>                
+                <th>CUENTAS DE COSTOS</th>                
+                <th>MONTO</th>                
+            </tr>
+            
+                
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <td>{{instalacion.nombre}}</td>
+                <td>$ {{instalacion.monto}}</td>
+                <td>{{costos.nombre}}</td>
+                <td>$ {{costos.monto}}</td>
+            </tr>
+            <tr>
+                <td>{{mantenimiento.nombre}}</td>
+                <td>$ {{mantenimiento.monto}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{seguridad.nombre}}</td>
+                <td>$ {{seguridad.monto}}</td>
+                <td></td>
+                <td></td>   
+            </tr>
+            
+        </tbody>
+        <tfoot class ="table-dark">
+            <tr>
+                <td><b>Total:</b></td>
+                <td>$ {{ total_ingreso }}</td>
+                <td></td>
+                <td>$ {{ costos.monto }}</td>
+            </tr>
+            <tr>
+                <td><b>Ganancias/Perdidas</b></td>
+                <td>$ {{ perdida_ganancia.monto }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock content %}

@@ -30,17 +30,42 @@ def balance(request):
 
         })
 
+def resultados(request):
+    costos = cuenta.objects.get(codigo = 4101)
+
+    instalacion = cuenta.objects.get(codigo = 5101)
+    mantenimiento = cuenta.objects.get(codigo = 5201)
+    seguridad = cuenta.objects.get(codigo = 5301)
+
+    total_ingreso = instalacion.monto + mantenimiento.monto + seguridad.monto
+    perdida_ganancia = cuenta.objects.get(codigo = 3102)
+    perdida_ganancia.monto = total_ingreso - costos.monto
+
+
+    return render(request, 'reporte/resultados.html',{
+        'costos':costos,
+        'instalacion':instalacion,
+        'mantenimiento':mantenimiento,
+        'seguridad':seguridad,
+        'total_ingreso':total_ingreso,
+        'perdida_ganancia':perdida_ganancia,
+    })
+
 def capital(request):
     capital = cuenta.objects.get(codigo = 3101)
-    utilidad = cuenta.objects.get(codigo = 3102)
+    perdida_ganancia = cuenta.objects.get(codigo=3102)
 
-    total = capital.monto + utilidad.monto
+    capital_nuevo = perdida_ganancia.monto + capital.monto
 
-    return render(request, 'reporte/capital.html',{
+    return render(request, 'reporte/capital.html', {
         'capital':capital,
-        'utilidad':utilidad,
-        'total':total,
+        'perdida_ganancia':perdida_ganancia,
+        'capital_nuevo':capital_nuevo,
     })
+
+
+    
+    
 
 
 
