@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django import forms
 
 # Create your views here.
 def reporte(request):
@@ -23,8 +24,31 @@ def TablaActividades(request):
         'TablaPuesto':TablaPuesto,
     })
 
+#def costeo(request):
+#    return render(request, 'costo/costeo.html')
+
 def costeo(request):
-    return render(request, 'costo/costeo.html')
+    actividades = actividad.objects.all()
+    inductores = inductor.objects.all()
+    #inductor31 = inductor.objects.get(codigo=31)
+    #inductor32 = inductor.objects.get(codigo=32)
+    #inductor33 = inductor.objects.get(codigo=33)
+    #CI_indirectos = costo_indirectos.objects.all()
+    puestos = puesto.objects.all()
+
+   
+        
+
+    return render(request, 'costo/costeo.html', {
+        'actividades':actividades,
+        'inductores':inductores,
+        #'inductor31':inductor31,
+        #'inductor32':inductor32,
+        #'inductor33':inductor33,
+        #'CI_indirectos':CI_indirectos,
+        'puestos':puestos
+    })         
+    
 
 # -------------------- CRUD DE ACTIVIDADES  ------------------------------
 class crearAC(CreateView):

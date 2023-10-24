@@ -9,5 +9,46 @@
 
 {% block content %}
     <div>Hola estas en Costeo</div>
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>Actividad</th>
+                <th>Inductor</th>
+                <th>CI Asociado</th>
+                <th>Monto CI Asociado</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <td>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="">Selecciona una opción</option>
+                        {% for o in actividades %}
+                            <option>{{ o.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="">Selecciona una opción</option>
+                        {% for o in inductores %}
+                            <option>{{ o.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="">Selecciona una opción</option>
+                        {% for o in CI_indirectos %}
+                            <option>{{ o.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    ${{HOLS}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock content %}
     

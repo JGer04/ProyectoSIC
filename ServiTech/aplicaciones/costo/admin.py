@@ -4,11 +4,11 @@ from .models import *
 # Register your models here.
 @admin.register(actividad)
 class actividad(admin.ModelAdmin):
-    list_display = ('codigo', 'nombre')
+    list_display = ('codigo', 'nombre', 'costo_indirecto_asociado')
 
 @admin.register(inductor)
 class inductor(admin.ModelAdmin):
-    list_display = ('codigo', 'nombre', 'costo_indirecto_asociado')
+    list_display = ('codigo', 'nombre')
 
 @admin.register(costo_indirectos)
 class costo_indirectos(admin.ModelAdmin):
