@@ -9,5 +9,75 @@
 
 {% block content %}
     <div>Hola estas en actividades</div>
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for e in TablaActividad %}
+                <tr>
+                    <td> {{ e.codigo }}</td>
+                    <td> {{ e.nombre }}</td>
+                </tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Costo Indirecto Asociado</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for e in TablaInductor %}
+                <tr>
+                    <td> {{ e.codigo }}</td>
+                    <td> {{ e.nombre }}</td>
+                    <td> {{ e.costo_indirecto_asociado }}</td>
+                </tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for e in TablaCI %}
+                <tr>
+                    <td> {{ e.codigo }}</td>
+                    <td> {{ e.nombre }}</td>
+                    <td>$ {{ e.monto }}</td>
+                </tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+    <table class="table table-striped" style="font-size: x-large;">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Salario Por Hora</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for e in TablaPuesto %}
+                <tr>
+                    <td> {{ e.codigo }}</td>
+                    <td> {{ e.nombre }}</td>
+                    <td> {{ e.salario_por_hora }}</td>
+                </tr>
+                    {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
     
