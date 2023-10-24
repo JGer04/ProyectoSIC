@@ -8,12 +8,16 @@
 
 
 {% block content %}
-    <div>Hola estas en actividades</div>
+    <br><h1>ACTIVIDADES</h1><br>
+    <a href="{% url 'crearAC' %}">
+        <button style="margin-bottom: 50px;" type="button" class="btn btn-primary">Agregar Actividad</button>
+    </a>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -21,16 +25,25 @@
                 <tr>
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
+                    <td> <a href="{% url 'modificarAC' e.id %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
                 </tr>
                     {% endfor %}
         </tbody>
     </table>
+    <br><h1>INDUCTORES</h1><br>
+    <a href="{% url 'crearIN' %}">
+        <button style="margin-bottom: 50px;" type="button" class="btn btn-primary">Agregar Inductor</button>
+    </a>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Costo Indirecto Asociado</th>
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -39,16 +52,25 @@
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
                     <td> {{ e.costo_indirecto_asociado }}</td>
+                    <td> <a href="{% url 'modificarIN' e.id %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
                 </tr>
                     {% endfor %}
         </tbody>
     </table>
+    <br><h1>COSTOS INDIRECTOS ASOCIADOS</h1><br>
+    <a href="{% url 'crearCI' %}">
+        <button style="margin-bottom: 50px;" type="button" class="btn btn-primary">Agregar CI Asociado</button>
+    </a>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Monto</th>
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -57,16 +79,25 @@
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
                     <td>$ {{ e.monto }}</td>
+                    <td> <a href="{% url 'modificarCI' e.id %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
                 </tr>
                     {% endfor %}
         </tbody>
     </table>
+    <br><h1>PUESTOS</h1><br>
+    <a href="{% url 'crearPU' %}">
+        <button style="margin-bottom: 50px;" type="button" class="btn btn-primary">Agregar Puesto</button>
+    </a>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Salario Por Hora</th>
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -75,6 +106,10 @@
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
                     <td> {{ e.salario_por_hora }}</td>
+                    <td> <a href="{% url 'modificarPU' e.id %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
                 </tr>
                     {% endfor %}
         </tbody>

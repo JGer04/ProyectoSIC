@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 def reporte(request):
@@ -23,3 +25,60 @@ def TablaActividades(request):
 
 def costeo(request):
     return render(request, 'costo/costeo.html')
+
+# -------------------- CRUD DE ACTIVIDADES  ------------------------------
+class crearAC(CreateView):
+    template_name = 'costo/CRUD-actividad/crear.html'
+    model = actividad
+    fields = ['codigo','nombre']
+    success_url = reverse_lazy('actividad')
+
+class modificarAC(UpdateView):
+    template_name = 'costo/CRUD-actividad/modificar.html'
+    model = actividad
+    fields = ['codigo','nombre']
+    success_message = "El registro %(nombre)s fue mofificado exitosamente"
+    success_url = reverse_lazy('actividad')
+
+# -------------------- CRUD DE INDUCTORES  ------------------------------
+class crearIN(CreateView):
+    template_name = 'costo/CRUD-inductor/crear.html'
+    model = inductor
+    fields = ['codigo','nombre','costo_indirecto_asociado']
+    success_url = reverse_lazy('actividad')
+
+class modificarIN(UpdateView):
+    template_name = 'costo/CRUD-inductor/modificar.html'
+    model = inductor
+    fields = ['codigo','nombre', 'costo_indirecto_asociado']
+    success_message = "El registro %(nombre)s fue mofificado exitosamente"
+    success_url = reverse_lazy('actividad')
+
+# -------------------- CRUD DE CI  ------------------------------
+class crearCI(CreateView):
+    template_name = 'costo/CRUD-CI/crear.html'
+    model = costo_indirectos
+    fields = ['codigo','nombre','monto']
+    success_url = reverse_lazy('actividad')
+
+class modificarCI(UpdateView):
+    template_name = 'costo/CRUD-CI/modificar.html'
+    model = costo_indirectos
+    fields = ['codigo','nombre', 'monto']
+    success_message = "El registro %(nombre)s fue mofificado exitosamente"
+    success_url = reverse_lazy('actividad')
+
+# -------------------- CRUD DE CI  ------------------------------
+class crearPU(CreateView):
+    template_name = 'costo/CRUD-puesto/crear.html'
+    model = puesto
+    fields = ['codigo','nombre','salario_por_hora']
+    success_url = reverse_lazy('actividad')
+
+class modificarPU(UpdateView):
+    template_name = 'costo/CRUD-puesto/modificar.html'
+    model = puesto
+    fields = ['codigo','nombre', 'salario_por_hora']
+    success_message = "El registro %(nombre)s fue mofificado exitosamente"
+    success_url = reverse_lazy('actividad')
+
