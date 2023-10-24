@@ -14,7 +14,7 @@
             <div class="boton-ef estado-resultados">
                 <img src="{% static 'img/estado-resultados.png'%}"  alt="">
                 <div class="parrafos">
-                    <p class="tipo">Estado de Resultados</p>
+                    <a href = "{% url 'resultados' %}"class="tipo">Estado de Resultados</a>
                     <p class="descripcion"> Informe sobre ganancias y pérdidas que muestra los ingresos y gastos de la empresa.</p>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="boton-ef estado-capital">
                 <img src="{% static 'img/estado-capital.png'%}"  alt="">
                 <div class="parrafos">
-                    <p class="tipo">Estado de Capital</p>
+                    <a href = "{% url 'capital' %}"class="tipo">Estado de Capital</a>
                     <p class="descripcion">Resumen de los cambios en el patrimonio neto de la empresa, detallando contribuciones de los propietarios y ganancias retenidas o distribuidas.</p>
                 </div>
             </div>

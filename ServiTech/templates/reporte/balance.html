@@ -6,54 +6,68 @@
 
 {% block content %}
 <br><h1>Balance General - ServiTech</h1><br>
-<table class="table table-striped" style="font-size: x-large;">
+
+<table class="table table-striped" style="font-size: x-large; margin-right: 10px">
     <thead class="table-dark">
         <tr>
             <th>ACTIVOS</th>
             <th></th>
-            <th>PASVIO Y CAPITAL</th>
-            <th></th>
+            <th>PASIVO Y CAPITAL</th> 
+            <th></th> 
         </tr>
         <tr>
             <th>Nombre de la Cuenta</th>
-            <th>MONTO</th>
+            <th>MONTO</th>   
             <th>Nombre de la Cuenta</th>
-            <th>MONTO</th>
-            
+            <th>MONTO</th>   
         </tr>
     </thead>
     <tbody class="table-group-divider">
-
-        {% for i in subcuenta %}
-        {% if i.categoria == 'Debe' %}
-        {% if i.codigo != '4101' and i.codigo != '4202' and i.codigo != '4201' and i.codigo != '4203' and i.codigo != '4204' %}
-        <tr>
-            <td>{{ i.nombre }}</td>
-            <td>$ {{ i.monto }}</td>
-            {% if i.categoria == 'Haber' %}    
-            <td>{{ i.nombre }}</td>
-            {% endif%}
-        {% endif %} 
-        {% endif %}
-
-        
-        </tr>    
-
-        {% endfor %}
-    
-        
+      <tr>
+        <td>{{ caja.nombre }}</td><td>$ {{ caja.monto }}</td>
+        <td>{{ cuentas_pagar.nombre }}</td><td>$ {{ cuentas_pagar.monto }}</td>
+    </tr>
+      <tr>
+        <td>{{ banco.nombre }}</td><td>$ {{ banco.monto }}</td>
+        <td>{{ acreedores.nombre }}</td><td>$ {{ acreedores.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ cuentas_cobrar.nombre }}</td><td>$ {{ cuentas_cobrar.monto }}</td>
+        <td>{{ iva_debito.nombre }}</td><td>$ {{ iva_debito.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ papel_utiles.nombre }}</td><td>$ {{ papel_utiles.monto }}</td>
+        <td>{{ interes.nombre }}</td><td>$ {{ interes.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ iva_credito.nombre }}</td><td>$ {{ iva_credito.monto }}</td>
+        <td>{{ renta_cobrada.nombre }}</td><td>$ {{ renta_cobrada.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ inventario_servidores.nombre }}</td><td>$ {{ inventario_servidores.monto }}</td>
+        <td>{{ documentos.nombre }}</td><td>$ {{ documentos.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ equipo_servidores.nombre }}</td><td>$ {{ equipo_servidores.monto }}</td>
+        <td>{{ capital.nombre }}</td><td>$ {{ capital.monto }}</td>
+    </tr>    
+      <tr>
+        <td>{{ edificio.nombre }}</td><td>$ {{ edificio.monto }}</td>
+        <td>{{ utilidad.nombre }}</td><td>$ {{ utilidad.monto }}</td>
+    </tr>    
+      <tr><td>{{ mobiliario.nombre }}</td><td>$ {{ mobiliario.monto }}</td><td></td><td></td></tr>    
+      <tr><td>{{ vehiculo.nombre }}</td><td>$ {{ vehiculo.monto }}</td><td></td><td></td></tr>    
     </tbody>
     <tfoot class ="table-dark">
         <tr>
             <td><b>Total:</b></td>
-            
-            <td>$ {{ suma_monto_debe }}</td>
-            <td></td>
-            <td>$ {{ suma_monto_haber }}</td>
+            <td>$ {{ suma_activo }}</td>
+            <td></td>    
+ 
+            <td>$ {{ suma_pasivo_capital }}</td>    
         </tr>
     </tfoot>
 </table>
-  </table>
     <a class= "btn" href = "{% url 'reporte' %}"> Volver</a>
 {% endblock content %}
 

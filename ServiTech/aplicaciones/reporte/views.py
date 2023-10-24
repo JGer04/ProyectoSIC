@@ -63,6 +63,56 @@ def capital(request):
         'capital_nuevo':capital_nuevo,
     })
 
+def balance_2(request):
+    caja = cuenta.objects.get(codigo = 1101)
+    banco = cuenta.objects.get(codigo = 1102)
+    cuentas_cobrar = cuenta.objects.get(codigo = 1103)
+    papel_utiles = cuenta.objects.get(codigo = 1104)
+    iva_credito = cuenta.objects.get(codigo = 1105)
+    inventario_servidores = cuenta.objects.get(codigo = 1106)
+    equipo_servidores = cuenta.objects.get(codigo = 1201)
+    edificio = cuenta.objects.get(codigo = 1202)
+    mobiliario = cuenta.objects.get(codigo = 1203)
+    vehiculo = cuenta.objects.get(codigo = 1204)
+
+    cuentas_pagar = cuenta.objects.get(codigo = 2101)
+    acreedores = cuenta.objects.get(codigo = 2102)
+    iva_debito = cuenta.objects.get(codigo = 2103)
+    interes = cuenta.objects.get(codigo = 2104)
+    renta_cobrada = cuenta.objects.get(codigo = 2105)
+    documentos = cuenta.objects.get(codigo = 2201)
+    capital = cuenta.objects.get(codigo = 3101)
+    utilidad = cuenta.objects.get(codigo = 3102)
+
+    suma_activo = caja.monto + banco.monto + cuentas_cobrar.monto + papel_utiles.monto + iva_credito.monto + inventario_servidores.monto + equipo_servidores.monto + edificio.monto + mobiliario.monto + vehiculo.monto
+    suma_pasivo_capital = cuentas_pagar.monto + acreedores.monto + iva_debito.monto + interes.monto + renta_cobrada.monto + documentos.monto + capital.monto + utilidad.monto
+
+    return render(request, 'reporte/balance.html', {
+        'caja':caja,
+        'banco':banco,
+        'cuentas_cobrar':cuentas_cobrar,
+        'papel_utiles':papel_utiles,
+        'iva_credito':iva_credito,
+        'inventario_servidores':inventario_servidores,
+        'equipo_servidores':equipo_servidores,
+        'edificio':edificio,
+        'mobiliario':mobiliario,
+        'vehiculo':vehiculo,
+        'cuentas_pagar':cuentas_pagar,
+        'acreedores':acreedores,
+        'iva_debito':iva_debito,
+        'interes':interes,
+        'renta_cobrada':renta_cobrada,
+        'documentos':documentos,
+        'capital':capital,
+        'utilidad':utilidad,
+        'suma_activo':suma_activo,
+        'suma_pasivo_capital':suma_pasivo_capital,
+
+    })
+
+    
+
 
     
     
