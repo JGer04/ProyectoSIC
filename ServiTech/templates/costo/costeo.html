@@ -23,28 +23,29 @@
                 <td>{{ actividad1.nombre }}</td>
                 <td>{{ inductor1.nombre }}</td>
                 <td>{{ actividad1.costo_indirecto_asociado }}</td>
-                <td>{{ consultoria_inicial }}</td>
+                <td class="monto-CI">{{ consultoria_inicial }}</td>
             </tr>
             <tr>
                 <td>{{ actividad2.nombre }}</td>
                 <td>{{ inductor2.nombre }}</td>
                 <td>{{ actividad2.costo_indirecto_asociado }}</td>
-                <td>{{ seleccion_HS }}</td>
+                <td class="monto-CI">{{ seleccion_HS }}</td>
             </tr>
             <tr>
                 <td>{{ actividad3.nombre }}</td>
                 <td>{{ inductor3.nombre }}</td>
                 <td>{{ actividad3.costo_indirecto_asociado }}</td>
-                <td>{{ instalacion_configuracion }}</td>
+                <td class="monto-CI">{{ instalacion_configuracion }}</td>
             </tr>
             <tr>
                 <td>{{ actividad4.nombre }}</td>
                 <td>{{ inductor4.nombre }}</td>
                 <td>{{ actividad4.costo_indirecto_asociado }}</td>
-                <td>{{ capacitacion }}</td>
+                <td class="monto-CI">{{ capacitacion }}</td>
             </tr>       
         </tbody>
     </table>
+    <button class="btn actualizarMonto-CI">Calcular</button>
 
     <br><h1>Número de veces por inductor al mes</h1><br>
     <table class="table table-striped" style="font-size: x-large;">
@@ -62,37 +63,38 @@
             <tr>
                 <td>{{ actividad1.nombre }}</td>
                 <td>{{ inductor1.nombre }}</td>
-                <td>50</td>
-                <td>{{ consultoria_inicial2 }}</td>
-                <td>{{ consultoria_inicial3 }}</td>
-                <td>{{ consultoria_inicial }}</td>
+                <td class="tabla2">50</td>
+                <td class="tabla2">{{ consultoria_inicial2 }}</td>
+                <td class="tabla2">{{ consultoria_inicial3 }}</td>
+                <td class="tabla2">{{ consultoria_inicial }}</td>
             </tr>
             <tr>
                 <td>{{ actividad2.nombre }}</td>
                 <td>{{ inductor2.nombre }}</td>
-                <td>125</td>
-                <td>{{ seleccion_HS2 }}</td>
-                <td>{{ seleccion_HS3 }}</td>
-                <td>{{ seleccion_HS }}</td>
+                <td class="tabla2">125</td>
+                <td class="tabla2">{{ seleccion_HS2 }}</td>
+                <td class="tabla2">{{ seleccion_HS3 }}</td>
+                <td class="tabla2">{{ seleccion_HS }}</td>
             </tr>
             <tr>
                 <td>{{ actividad3.nombre }}</td>
                 <td>{{ inductor3.nombre }}</td>
-                <td>10</td>
-                <td>{{ instalacion_configuracion2 }}</td>
-                <td>{{ instalacion_configuracion3 }}</td>
-                <td>{{ instalacion_configuracion }}</td>
+                <td class="tabla2">10</td>
+                <td class="tabla2">{{ instalacion_configuracion2 }}</td>
+                <td class="tabla2">{{ instalacion_configuracion3 }}</td>
+                <td class="tabla2">{{ instalacion_configuracion }}</td>
             </tr>
             <tr>
                 <td>{{ actividad4.nombre }}</td>
                 <td>{{ inductor4.nombre }}</td>
-                <td>200</td>
-                <td>{{ capacitacion2 }}</td>
-                <td>{{ capacitacion3 }}</td>
-                <td>{{ capacitacion }}</td>
+                <td class="tabla2">200</td>
+                <td class="tabla2">{{ capacitacion2 }}</td>
+                <td class="tabla2">{{ capacitacion3 }}</td>
+                <td class="tabla2">{{ capacitacion }}</td>
             </tr>
         </tbody>
     </table>
+    <button class="btn actualizarTabla2">Calcular</button>
     <br><h1>Mano de obra</h1><br>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
@@ -106,24 +108,25 @@
         <tbody class="table-group-divider">
            <tr>
             <td>{{puesto1.nombre}}</td>
-            <td>{{puesto1.salario_por_hora}}</td>
-            <td>50</td>
-            <td>{{mod1}}</td>
+            <td class=tabla3>{{puesto1.salario_por_hora}}</td>
+            <td class=tabla3>50</td>
+            <td class=tabla3>{{mod1}}</td>
            </tr>
            <tr>
             <td>{{puesto2.nombre}}</td>
-            <td>{{puesto2.salario_por_hora}}</td>
-            <td>200</td>
-            <td>{{mod2}}</td>
+            <td class=tabla3>{{puesto2.salario_por_hora}}</td>
+            <td class=tabla3>200</td>
+            <td class=tabla3>{{mod2}}</td>
            </tr>
            <tr>
             <td>{{puesto3.nombre}}</td>
-            <td>{{puesto3.salario_por_hora}}</td>
-            <td>125</td>
-            <td>{{mod3}}</td>
+            <td class=tabla3>{{puesto3.salario_por_hora}}</td>
+            <td class=tabla3>125</td>
+            <td class=tabla3>{{mod3}}</td>
            </tr>
         </tbody>
     </table>
+    <button class="btn actualizarTabla3">Calcular</button>
     <br><h1>Resultado Del Costeo</h1><br>
     <table class="table table-striped" style="font-size: x-large;">
         <thead class="table-dark">
@@ -134,11 +137,11 @@
         </thead>
         <tbody class="table-group-divider">
            <tr>
-            <td>{{costo_total}}</td>
-            <td>{{costo_unitario}}</td>
+            <td class="tabla4">{{costo_total}}</td>
+            <td class="tabla4">{{costo_unitario}}</td>
            </tr>
         </tbody>
     </table>
-
+    <button class="btn actualizarTabla4">Calcular</button>
 {% endblock content %}
     
