@@ -17,6 +17,7 @@
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
+                <th>Costo Indirecto Asociado</th>
                 <th>Modificar</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <tr>
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
+                    <td> {{ e.costo_indirecto_asociado }}</td>
                     <td> <a href="{% url 'modificarAC' e.id %}">
                         <i class="fa-regular fa-pen-to-square"></i>
                         </a>
@@ -42,7 +44,6 @@
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
-                <th>Costo Indirecto Asociado</th>
                 <th>Modificar</th>
             </tr>
         </thead>
@@ -51,7 +52,6 @@
                 <tr>
                     <td> {{ e.codigo }}</td>
                     <td> {{ e.nombre }}</td>
-                    <td> {{ e.costo_indirecto_asociado }}</td>
                     <td> <a href="{% url 'modificarIN' e.id %}">
                         <i class="fa-regular fa-pen-to-square"></i>
                         </a>
