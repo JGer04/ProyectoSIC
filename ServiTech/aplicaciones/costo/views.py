@@ -136,13 +136,13 @@ def costeo(request):
 class crearAC(CreateView):
     template_name = 'costo/CRUD-actividad/crear.html'
     model = actividad
-    fields = ['codigo','nombre']
+    fields = ['codigo','nombre', 'costo_indirecto_asociado']
     success_url = reverse_lazy('actividad')
 
 class modificarAC(UpdateView):
     template_name = 'costo/CRUD-actividad/modificar.html'
     model = actividad
-    fields = ['codigo','nombre']
+    fields = ['codigo','nombre', 'costo_indirecto_asociado']
     success_message = "El registro %(nombre)s fue mofificado exitosamente"
     success_url = reverse_lazy('actividad')
 
@@ -150,13 +150,13 @@ class modificarAC(UpdateView):
 class crearIN(CreateView):
     template_name = 'costo/CRUD-inductor/crear.html'
     model = inductor
-    fields = ['codigo','nombre','costo_indirecto_asociado']
+    fields = ['codigo','nombre']
     success_url = reverse_lazy('actividad')
 
 class modificarIN(UpdateView):
     template_name = 'costo/CRUD-inductor/modificar.html'
     model = inductor
-    fields = ['codigo','nombre', 'costo_indirecto_asociado']
+    fields = ['codigo','nombre']
     success_message = "El registro %(nombre)s fue mofificado exitosamente"
     success_url = reverse_lazy('actividad')
 
