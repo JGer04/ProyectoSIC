@@ -18,4 +18,4 @@ class transaccion(models.Model):
     def __str__(self):
         return f"transaccion #{self.pk}"
     def fecha_formateada(self):
-        return formats.date_format(self.fecha, "Y-m-d")
+        return formats.date_format(self.fecha, "d-m-Y")

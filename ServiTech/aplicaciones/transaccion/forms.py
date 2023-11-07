@@ -9,7 +9,18 @@ class TransaccionForm(forms.ModelForm):
         fields = ['tipo','codigo','fecha','descripcion','cuenta_Debe','cuenta_Haber','monto']
 
     tipo = forms.ChoiceField(
-        widget=forms.RadioSelect, choices= transaccion.CLASIFICACIONES
+        widget=forms.RadioSelect, choices= transaccion.CLASIFICACIONES,
+        label = 'Tipo de Transacción'
+    )
+
+    cuenta_Debe = forms.ModelChoiceField(
+        queryset=cuenta.objects.all(),
+        label='Cuenta 1'  # Etiqueta personalizada para el campo 'cuenta_Debe'
+    )
+    
+    cuenta_Haber = forms.ModelChoiceField(
+        queryset=cuenta.objects.all(),
+        label='Cuenta 2'  # Etiqueta personalizada para el campo 'cuenta_Haber'
     )
 
     def __init__(self, *args, **kwargs):

@@ -38,8 +38,9 @@ def resultados(request):
     seguridad = cuenta.objects.get(codigo = 5301)
 
     total_ingreso = instalacion.monto + mantenimiento.monto + seguridad.monto
-    perdida_ganancia = cuenta.objects.get(codigo = 3102)
-    perdida_ganancia.monto = total_ingreso - costos.monto
+    perdida_ganancia = total_ingreso - costos.monto 
+    perGa = cuenta.objects.get(codigo = 3102)
+    perGa.monto += perdida_ganancia
 
 
     return render(request, 'reporte/resultados.html',{
